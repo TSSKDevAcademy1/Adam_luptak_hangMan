@@ -1,0 +1,16 @@
+.center
+{
+	text-align: center;
+}
+
+body{
+	background-color: #FFFFFF;
+}
+
+
+#secret{
+font-size: 4em;
+letter-spacing: 0.5em;
+text-align: center;
+}
+
