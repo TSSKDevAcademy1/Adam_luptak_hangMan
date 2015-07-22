@@ -10,7 +10,19 @@ body{
 
 #secret{
 font-size: 4em;
-letter-spacing: 0.5em;
+letter-spacing: 0.4em;
 text-align: center;
 }
 
+th{
+
+ 	text-align: center;
+}
+
+#time{
+
+font-size: 4em;
+letter-spacing: 0.4em;
+text-align: center;
+
+}

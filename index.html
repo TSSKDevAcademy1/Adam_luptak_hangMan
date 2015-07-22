@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	  <title>HangMan</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	  <link rel="stylesheet" href="css/style.css">
+	
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0px;">
+      <div class="container">
+        
+        <div class="navbar-header">
+
+          
+          <a class="navbar-brand" >HangMan GAME</a>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+
+            <li><a  id="about"></a> </li>       
+            <li><a href="#contact"></a></li>
+            
+          </ul>
+
+
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+   <div class="jumbotron center" style="background-color:#5B4282; color:#FFFFFF">
+  
+	    <h1>HangMan</h1> 
+
+   </div>
+
+<div id="time" style="margin-left: 0.6em"></div>
+
+
+   <div class="row text-center">
+
+ 		 <div class="col-md-12" style="float:left" > 
+
+ 			  <img src="Images/phase1.png" id="obrazok" > 
+
+ 		 </div>
+  
+	</div>
+
+<div class="row text-center"> 
+
+  	<div class="col-md-12" style="margin-left: 0.6em" >
+
+  		 <span id="secret">
+
+  		 </span>
+
+  	</div>
+
+</div>
+
+<br/>
+
+
+
+
+
+<div class="col-md-12 text-center" >
+
+	<div id="buttonn">
+
+
+	</div>
+
+		<br/>
+</div>
+
+<div class="row">
+
+ 	<div class="col-md-12 text-center" id="reset"> 
+
+ 	</div>
+
+</div>
+
+<br/>
+
+<div class="col-md-12 text-center" >
+
+	<div class="container">
+	  <h2>Hall of fame</h2>
+	  <p>Green are the best players they have best time</p>            
+	 <div class="container">
+            
+   <table class="table table-striped">
+    <thead>
+      <tr>
+      	
+        <th >Firstname</th>
+        <th>Lastname</th>
+        <th>time</th>
+
+      </tr>
+    </thead>
+    <tbody  >
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr id="tabulka">
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr >
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="js/hangman.js"></script>
+
+</body>
+</html>
