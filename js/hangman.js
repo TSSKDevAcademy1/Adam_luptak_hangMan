@@ -432,9 +432,9 @@ function tabb()
 {
 
  
- // localStorage.setItem("0", "0,Smith,Network,17");
- //  localStorage.setItem("1", "1,Adriana,Network,19");
- //  localStorage.setItem("2", "2,Adriana,Network,19");
+  localStorage.setItem("0", "0,Smith,Network,17");
+   localStorage.setItem("1", "1,Adriana,Network,19");
+  localStorage.setItem("2", "2,Adriana,Network,19");
 
   var str ="";
 var res = "";
