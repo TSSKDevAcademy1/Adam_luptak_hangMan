@@ -1,4 +1,4 @@
 # Adam_luptak_hangMan
+Uz ide vsetko 
 
-
-ESTE NIEJE DOKONCENE BUDE dneska dop 24 hodiny
+1. spustie hru spusti sa casovac musite uhadnut slovo po uspesnom vyhrati ked ste mali najlpesi cas budete zaradeny do Hallof fame kde zadate svoje meno medzera heslo
