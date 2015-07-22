@@ -14,6 +14,10 @@ alphabet(); // button group plot
 initilisation();//len priz zaciatku
 
 
+    document.getElementById("secret").setAttribute("style","Color:red");
+    document.getElementById("secret").textContent ="PUSH START TO START THE GAME";
+
+
 function onLoad() //first run everything will be initialized
 {
     secret = "JAVASCRIPT";
@@ -27,21 +31,10 @@ function onLoad() //first run everything will be initialized
     cas = 0;
 
      document.getElementById("time").textContent ="Time:" + cas++ +"s";
-
+     document.getElementById("secret").setAttribute("style","Color:black");
     el1 = document.getElementById("obrazok");
     el1.setAttribute("src","Images/phase1.png");
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -63,11 +56,6 @@ function getGuessedWord(secret, lettersGuessed)
   return result;
 
 }
-
-
-
-
-
 
 
 
@@ -136,8 +124,16 @@ if(pocitadlo >= 4 &&  pre != secret)
 {
   el1.setAttribute("src","Images/phase5.png");
 
-   setTimeout(function(){alert("ligol si")}, 500);
+   //setTimeout(function(){alert("ligol si")}, 500);
     
+    document.getElementById("secret").setAttribute("style","Color:red");
+    document.getElementById("secret").textContent =" LOOSE PUSH RESTART TO START THE GAME AGAIN";
+  cas=0;
+
+  clearInterval(myVar);
+
+
+
      $(':button').each(function() {
         
        var el2 = this.target;
@@ -159,9 +155,14 @@ if(pocitadlo >= 4 &&  pre != secret)
 }
 else if(pre === secret)
 {
+ document.getElementById("secret").setAttribute("style","Color:#4cae4c");
+ cas= cas-1;
+  document.getElementById("secret").textContent ="YOU WIN YOUR TIME IS: " + cas.toString() + " s";
 
-  alert("vyhral si");
+ tabb_win();
+
 cas=0;
+
 
 clearInterval(myVar);
 
@@ -283,7 +284,31 @@ function onClick1()
 {
 
   onLoad();
-  button_release();
+
+      document.getElementById("secret").setAttribute("style","Color:red");
+    document.getElementById("secret").textContent ="PUSH START TO START THE GAME";
+
+$(':button').each(function() {
+        
+       var el2 = this.target;
+
+       if(this.textContent === "Start")
+        {
+        this.removeAttribute('disabled'); 
+        }
+       else
+       {
+        this.setAttribute("disabled","false");   
+
+       }
+
+
+                         
+    });
+
+
+
+  
 
 }
 
@@ -294,40 +319,25 @@ function onClick1()
 function onClick2()
 {
 
- button_release();
+      var empty="";
+    for(var c of secret){ empty +="_";}
 
-var el = event.target;
+         document.getElementById("secret").setAttribute("style","Color:Black");
+         document.getElementById("secret").textContent =empty;
+
+
+       button_release();
+
+ var el = event.target;
 
  el.setAttribute("disabled","false");
 
-var cas =  0;
+ var cas =  0;
 
-document.getElementById("time").textContent ="Time:" + cas++ +"s";
+ document.getElementById("time").textContent ="Time:" + cas++ +"s";
  myVar= setInterval(function(){myTimer()},1000);
 
 }
-
-
-addRow();
-
-function addRow()
-{
-   
-
-
-     document.getElementById("tabulka").innerHTML = "<td>sdsdsd</td> <td>sdsdsd</td> <td>sdsdsd</td>";
-
-
-
-}
-
-
-
-
-
-
-
-
 
 
 function initilisation()
@@ -340,7 +350,7 @@ function initilisation()
     btn.setAttribute("class","btn btn-success");
 
 
-    btn.setAttribute("style","width:6em; margin-right: 2em;");
+    btn.setAttribute("style","width:10em; height:3em; margin-right: 2em;");
     btn.addEventListener("click",onClick1);
 
 // width: 20em;  height: 2em;
@@ -360,7 +370,7 @@ function initilisation()
     var btn2 = document.createElement("button"); // vytvorim tlacidlo
     btn2.setAttribute("type","button"); // nastavim typ a hodnotu
     btn2.setAttribute("class","btn btn-success");
-    btn2.setAttribute("style","width:6em");
+    btn2.setAttribute("style","width:10em; height:3em");
 
     btn2.addEventListener("click",onClick2);
 
@@ -411,6 +421,112 @@ function made_button(String, where,fun)
     
 
     elem.appendChild(btn3);
+
+
+
+}
+
+tabb();
+
+function tabb()
+{
+
+ 
+ // localStorage.setItem("0", "0,Smith,Network,17");
+ //  localStorage.setItem("1", "1,Adriana,Network,19");
+ //  localStorage.setItem("2", "2,Adriana,Network,19");
+
+  var str ="";
+var res = "";
+
+var cars = ["sdsd", "Volvo", "BMW"];
+
+
+for(i = 0 ; i < 3; i++)
+{
+   //function read from memory
+      str = localStorage.getItem(i.toString());
+      res = str.split(",");
+      
+
+     cars[i] = "<tr><td>"+res[1]+"</td> <td>"+ res[2]+"</td> <td>"+res[3]+"</td></tr>"; 
+     str = cars.join("");
+}
+
+
+ document.getElementById("tab").innerHTML = str;
+
+
+}
+
+
+
+function tabb_win()
+{
+
+
+  var str ="";
+var res = "";
+var prepinac = 0;
+var cars = ["sdsd", "Volvo", "BMW"];
+
+
+
+
+
+for(i = 0 ; i < 3; i++)
+{
+
+       str = localStorage.getItem(i.toString());
+      res = str.split(",");
+
+    if(cas <  parseInt(res[3]) )
+    {
+      prepinac = res[0];
+      break;
+
+    }
+
+
+
+
+}
+
+
+
+for(i = 0 ; i < 3; i++)
+{
+   //function read from memory
+      str = localStorage.getItem(i.toString());
+      res = str.split(",");
+      
+
+      if(prepinac == i)
+      {
+
+       var person = prompt("Inster your first and second name");
+         var t = person.split(" ");
+           
+         res[1] = t[0];
+         res[2] = t[1];
+         res[3] = cas.toString();
+        cars[i] = "<tr><td>"+res[1]+"</td> <td>"+ res[2]+"</td> <td>"+res[3]+"</td></tr>"; 
+       
+       localStorage.setItem(i, i.toString()+","+t[0]+","+t[1]+","+cas.toString());
+    
+      }
+
+ else{
+
+     cars[i] = "<tr><td>"+res[1]+"</td> <td>"+ res[2]+"</td> <td>"+res[3]+"</td></tr>"; 
+   }
+     
+}
+
+str = cars.join("");
+
+
+ document.getElementById("tab").innerHTML = str;
 
 
 
